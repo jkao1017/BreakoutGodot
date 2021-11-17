@@ -1,0 +1,88 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sprites/paddle.png" type="Texture" id=1]
+[ext_resource path="res://Mini Scenes/Bricks.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Paddle.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/World.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 40, 4 )
+
+[node name="World" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Paddle" type="KinematicBody2D" parent="."]
+position = Vector2( 320, 320 )
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Paddle"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle"]
+shape = SubResource( 3 )
+
+[node name="Position2D" type="Position2D" parent="Paddle"]
+position = Vector2( 0, 32 )
+
+[node name="Walls" type="StaticBody2D" parent="." groups=["walls"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+polygon = PoolVector2Array( 0, 384, -32, 384, -32, -24, 672, -24, 672, 384, 640, 384, 640, 0, 0, 0 )
+
+[node name="Bricks" type="Node2D" parent="."]
+
+[node name="Bricks" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 312, 80 )
+
+[node name="Bricks4" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 376, 80 )
+
+[node name="Bricks5" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 440, 80 )
+
+[node name="Bricks6" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 504, 80 )
+
+[node name="Bricks7" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 120, 80 )
+
+[node name="Bricks8" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 120, 112 )
+
+[node name="Bricks9" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 184, 112 )
+
+[node name="Bricks10" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 248, 112 )
+
+[node name="Bricks11" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 312, 112 )
+
+[node name="Bricks12" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 376, 112 )
+
+[node name="Bricks13" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 440, 112 )
+
+[node name="Bricks14" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 504, 112 )
+
+[node name="Bricks2" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 248, 80 )
+
+[node name="Bricks3" parent="Bricks" instance=ExtResource( 2 )]
+position = Vector2( 184, 80 )
+
+[node name="score" type="Label" parent="."]
+margin_left = 24.0
+margin_top = 16.0
+margin_right = 64.0
+margin_bottom = 30.0
+text = "Score: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}

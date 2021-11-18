@@ -14,12 +14,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(delta)
 	var bodies = get_colliding_bodies()
 	
 	for body in bodies:
 		if body.is_in_group("bricks"):
-			get_node("/root/World").score += 5
+			get_node("/root/World").score += 1
 			body.queue_free()
 			
 		if body.get_name() == "Paddle":

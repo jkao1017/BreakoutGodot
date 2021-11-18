@@ -3,12 +3,11 @@
 [ext_resource path="res://Sprites/brick.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 30, 14 )
+extents = Vector2( 15, 7 )
 
 [node name="Bricks" type="StaticBody2D" groups=["bricks"]]
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true

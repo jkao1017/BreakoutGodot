@@ -21,12 +21,19 @@ func _process(delta):
 			get_node("/root/World").score += 1
 			body.queue_free()
 			
+			$Bounce.play()
+		
+		if body.is_in_group("walls"):
+			$Bounce.play()
+			
 		if body.get_name() == "Paddle":
 			var speed = get_linear_velocity().length()
 			var direction = position - body.get_node("Position2D").get_global_position()
 			#var velocity = direction.normalized() * min(speed+SPEEDUP*delta, MAXSPEED*delta)
 			var velocity = direction.normalized() * 200
 			set_linear_velocity(velocity)
+			
+			$Bounce.play()
 	
 	if position.y > get_viewport_rect().end.y:
 		queue_free()

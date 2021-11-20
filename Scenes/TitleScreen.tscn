@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Fonts/RoadRage-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Buttons/CloneButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Buttons/JuicyButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/TitleScreen.gd" type="Script" id=4]
+[ext_resource path="res://Music/A Journey Awaits.ogg" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -66,3 +67,8 @@ margin_left = 0.0
 margin_top = 40.0
 margin_right = 100.0
 margin_bottom = 60.0
+
+[node name="Level Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+volume_db = -8.0
+autoplay = true

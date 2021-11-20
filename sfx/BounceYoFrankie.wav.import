@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/BounceYoFrankie.wav-f6d1fe3c0c760398e6027b4d3e7176ef.sample"
+
+[deps]
+
+source_file="res://sfx/BounceYoFrankie.wav"
+dest_files=[ "res://.import/BounceYoFrankie.wav-f6d1fe3c0c760398e6027b4d3e7176ef.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,14 +1,18 @@
 extends RigidBody2D
 
+signal life_change(ball)
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-const SPEEDUP = 400
+const SPEEDUP = 500
 const MAXSPEED = 30000
-
+var max_lives: int = 3
+var lives: float = max_lives
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	connect("life_changed", get_parent().get_node("UI/Lives"),"on_plater_life_changed")
+	emit_signal("life_changed",max_lives)
 	pass # Replace with function body.
 
 
@@ -35,5 +39,11 @@ func _process(delta):
 			
 			$Bounce.play()
 	
-	if position.y > get_viewport_rect().end.y:
+	if get_position().y > get_viewport_rect().end.y:
+		print("Ball is Dead")
+		get_tree().reload_current_scene()
+		lives -1
+		emit_signal("life_change", lives)
 		queue_free()
+	if lives <0:
+		print("GAME OVER")

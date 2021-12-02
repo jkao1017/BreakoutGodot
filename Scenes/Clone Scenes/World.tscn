@@ -1,0 +1,167 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Music/A Journey Awaits.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Scenes/Clone Scenes/World.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Clone Scenes/Paddle.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/paddle.png" type="Texture" id=4]
+[ext_resource path="res://Buttons/MenuButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Mini Scenes/Bricks.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 30, 4 )
+
+[node name="World" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Paddle" type="KinematicBody2D" parent="."]
+position = Vector2( 320, 320 )
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Paddle"]
+scale = Vector2( 1.5, 2 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paddle"]
+shape = SubResource( 3 )
+
+[node name="Position2D" type="Position2D" parent="Paddle"]
+position = Vector2( 0, 32 )
+
+[node name="Walls" type="StaticBody2D" parent="." groups=["walls"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+polygon = PoolVector2Array( 0, 384, -32, 384, -32, -24, 672, -24, 672, 384, 640, 384, 640, 0, 0, 0 )
+
+[node name="Bricks" type="Node2D" parent="."]
+
+[node name="Bricks" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 240, 80 )
+
+[node name="Bricks16" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 304, 96 )
+
+[node name="Bricks17" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 336, 96 )
+
+[node name="Bricks18" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 368, 96 )
+
+[node name="Bricks19" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 400, 96 )
+
+[node name="Bricks20" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 432, 96 )
+
+[node name="Bricks21" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 464, 80 )
+
+[node name="Bricks22" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 464, 96 )
+
+[node name="Bricks23" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 496, 80 )
+
+[node name="Bricks24" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 496, 96 )
+
+[node name="Bricks25" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 144, 112 )
+
+[node name="Bricks26" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 176, 112 )
+
+[node name="Bricks27" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 208, 112 )
+
+[node name="Bricks28" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 240, 112 )
+
+[node name="Bricks29" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 272, 112 )
+
+[node name="Bricks30" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 304, 112 )
+
+[node name="Bricks31" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 336, 112 )
+
+[node name="Bricks32" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 368, 112 )
+
+[node name="Bricks33" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 400, 112 )
+
+[node name="Bricks34" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 432, 112 )
+
+[node name="Bricks35" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 464, 112 )
+
+[node name="Bricks36" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 496, 112 )
+
+[node name="Bricks15" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 272, 96 )
+
+[node name="Bricks4" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 272, 80 )
+
+[node name="Bricks5" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 304, 80 )
+
+[node name="Bricks6" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 336, 80 )
+
+[node name="Bricks7" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 144, 80 )
+
+[node name="Bricks8" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 144, 96 )
+
+[node name="Bricks9" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 176, 96 )
+
+[node name="Bricks10" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 208, 96 )
+
+[node name="Bricks11" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 240, 96 )
+
+[node name="Bricks12" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 368, 80 )
+
+[node name="Bricks13" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 400, 80 )
+
+[node name="Bricks14" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 432, 80 )
+
+[node name="Bricks2" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 208, 80 )
+
+[node name="Bricks3" parent="Bricks" instance=ExtResource( 6 )]
+position = Vector2( 176, 80 )
+
+[node name="score" type="Label" parent="."]
+margin_left = 24.0
+margin_top = 16.0
+margin_right = 64.0
+margin_bottom = 30.0
+text = "Score: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton" parent="." instance=ExtResource( 5 )]
+margin_left = 24.0
+margin_top = 36.0
+margin_right = 74.0
+margin_bottom = 56.0
+
+[node name="Level Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+volume_db = -8.0
+autoplay = true

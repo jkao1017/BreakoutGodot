@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Fonts/RoadRage-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Buttons/CloneButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Buttons/JuicyButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/TitleScreen.gd" type="Script" id=4]
 [ext_resource path="res://Music/A Journey Awaits.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Buttons/AlienButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://sfx/blipSelect.wav" type="AudioStream" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -60,15 +62,26 @@ __meta__ = {
 
 [node name="CloneButton" parent="Buttons" instance=ExtResource( 2 )]
 margin_right = 100.0
-scene_to_load = "res://Scenes/World.tscn"
+scene_to_load = "res://Scenes/Clone Scenes/World.tscn"
 
 [node name="JuicyButton" parent="Buttons" instance=ExtResource( 3 )]
 margin_left = 0.0
 margin_top = 40.0
 margin_right = 100.0
 margin_bottom = 60.0
+scene_to_load = "Scenes/Variant Scenes/variant.tscn"
+
+[node name="AlienButton" parent="Buttons" instance=ExtResource( 6 )]
+margin_top = 80.0
+margin_right = 100.0
+margin_bottom = 100.0
 
 [node name="Level Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
 volume_db = -8.0
 autoplay = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -20.101
+pitch_scale = 0.65

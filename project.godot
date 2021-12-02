@@ -14,6 +14,10 @@ config/name="Godot Projects"
 run/main_scene="res://Scenes/TitleScreen.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Livecounter="*res://Scenes/Alien Scenes/Livecounter.gd"
+
 [display]
 
 window/size/width=640

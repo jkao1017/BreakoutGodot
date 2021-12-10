@@ -62,19 +62,20 @@ __meta__ = {
 
 [node name="CloneButton" parent="Buttons" instance=ExtResource( 2 )]
 margin_right = 100.0
-scene_to_load = "res://Scenes/Clone Scenes/World.tscn"
+scene_to_load = "res://Scenes/CloneScenes/World.tscn"
 
 [node name="JuicyButton" parent="Buttons" instance=ExtResource( 3 )]
 margin_left = 0.0
 margin_top = 40.0
 margin_right = 100.0
 margin_bottom = 60.0
-scene_to_load = "Scenes/Variant Scenes/variant.tscn"
+scene_to_load = "Scenes/VariantScenes/variant.tscn"
 
 [node name="AlienButton" parent="Buttons" instance=ExtResource( 6 )]
 margin_top = 80.0
 margin_right = 100.0
 margin_bottom = 100.0
+scene_to_load = "res://Scenes/AlienScenes/AlienWorld.tscn"
 
 [node name="Level Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )

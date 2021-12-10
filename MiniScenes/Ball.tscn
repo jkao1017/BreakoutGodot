@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Scenes/Clone Scenes/Ball.gd" type="Script" id=1]
+[ext_resource path="res://sfx/BounceYoFrankie.wav" type="AudioStream" id=1]
 [ext_resource path="res://Sprites/ball.png" type="Texture" id=2]
-[ext_resource path="res://sfx/BounceYoFrankie.wav" type="AudioStream" id=3]
+[ext_resource path="res://Scenes/CloneScenes/Ball.gd" type="Script" id=3]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.0
@@ -20,7 +20,7 @@ contact_monitor = true
 linear_velocity = Vector2( 0, -200 )
 linear_damp = 0.0
 angular_damp = 0.0
-script = ExtResource( 1 )
+script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 4, 4 )
@@ -33,5 +33,5 @@ __meta__ = {
 shape = SubResource( 2 )
 
 [node name="Bounce" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 3 )
+stream = ExtResource( 1 )
 volume_db = 2.7

@@ -4,7 +4,7 @@ extends KinematicBody2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-const ball_scene = preload("res://Mini Scenes/Ball.tscn")
+const ball_scene = preload("res://MiniScenes/Ball.tscn")
 
 export var speed = 200
 var velocity = Vector2(0,0)

@@ -1,0 +1,52 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Music/A Journey Awaits.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Scenes/AlienScenes/BossShip.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/AlienScenes/Hearts.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/AlienScenes/Ship.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/AlienScenes/Camera.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/AlienScenes/Background.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/AlienScenes/AlienWorld.gd" type="Script" id=7]
+[ext_resource path="res://Buttons/MenuButton.tscn" type="PackedScene" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 9, 180 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8, 180 )
+
+[node name="World" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="Background" parent="." instance=ExtResource( 6 )]
+
+[node name="Ship" parent="." instance=ExtResource( 4 )]
+
+[node name="BossShip" parent="." instance=ExtResource( 2 )]
+
+[node name="Hearts" parent="." instance=ExtResource( 3 )]
+
+[node name="Wall" type="StaticBody2D" parent="." groups=["walls"]]
+collision_layer = 2
+collision_mask = 3
+
+[node name="leftwall" type="CollisionShape2D" parent="Wall"]
+position = Vector2( -9, 180 )
+shape = SubResource( 1 )
+
+[node name="rightwall" type="CollisionShape2D" parent="Wall"]
+position = Vector2( 648, 180 )
+shape = SubResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -8.0
+autoplay = true
+
+[node name="Camera2D" parent="." instance=ExtResource( 5 )]
+
+[node name="MenuButton" parent="." instance=ExtResource( 8 )]
+margin_left = 576.0
+margin_top = 328.0
+margin_right = 632.0
+margin_bottom = 348.0

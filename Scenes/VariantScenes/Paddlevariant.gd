@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 
 # Declare member variables here. Examples:
-# var a = 2
+var a = 0
 # var b = "text"
 const ball_scene = preload("res://MiniScenes/Ball.tscn")
 
@@ -15,11 +15,13 @@ func _ready():
 	pass
 	
 func _process(delta):
-	#press enter to spawn another ball
-	if Input.is_action_just_pressed("ui_accept"):
+	# Ball spawn
+	if a <= 0:
+		Input.is_action_just_pressed("ui_accept")
 		var ball = ball_scene.instance()
 		ball.position = position-Vector2(0,16)
 		get_tree().get_root().add_child(ball)
+		
 	if Input.is_action_pressed("ui_up"):
 		velocity.y = -speed
 		

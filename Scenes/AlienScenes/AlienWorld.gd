@@ -4,7 +4,7 @@ extends Node2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
+signal menu_pressed_alien
 var hello = rand_range(0,50)
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,6 +17,7 @@ func handleDamage():
 
 func _on_Button_pressed(scene_to_load):
 	get_tree().change_scene(scene_to_load)
+	emit_signal("menu_pressed_alien")
 	
 	
 

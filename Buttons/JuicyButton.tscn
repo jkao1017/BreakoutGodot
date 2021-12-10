@@ -10,6 +10,6 @@ margin_bottom = 80.0
 scene_to_load = "Scenes/variant.tscn"
 
 [node name="Label" parent="." index="0"]
-text = "Juicy Breakout
+text = "Variant
 
 "

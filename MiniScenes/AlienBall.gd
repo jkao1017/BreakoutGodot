@@ -7,6 +7,11 @@ extends RigidBody2D
 const SPEEDUP = 400
 const MAXSPEED = 30000
 export var bulletImpact : PackedScene
+
+func _ready():
+	var menu_pressed_clone = get_tree().get_root().find_node("AlienWorld",true,false)
+	menu_pressed_clone.connect("menu_pressed_alien", self, "handleMenuAlien")
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var bodies = get_colliding_bodies()
@@ -44,4 +49,6 @@ func _process(delta):
 		if Livecounter.alienBallCount < 0:
 			Livecounter.alienBallCount = 0
 		
-	
+func handleMenuAlien():
+	Livecounter.alienBallCount -=1
+	queue_free()	

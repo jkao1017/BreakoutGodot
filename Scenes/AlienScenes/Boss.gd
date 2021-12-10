@@ -35,10 +35,7 @@ func _process(delta):
 		_on_Timer_timeout()
 	
 		
-	
-		
 
-	
 		
 func damage():
 	

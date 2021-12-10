@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-signal life_change(ball)
+
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -11,10 +11,10 @@ var max_lives: int = 3
 var lives: float = max_lives
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	connect("life_changed", get_parent().get_node("UI/Lives"),"on_plater_life_changed")
-	emit_signal("life_changed",max_lives)
-	var menu_pressed_clone = get_tree().get_root().find_node("World",true,false)
-	menu_pressed_clone.connect("menu_pressed", self, "handleMenuClone")
+
+	
+	var menu_pressed_clone = get_tree().get_root().find_node("variant",true,false)
+	menu_pressed_clone.connect("menu_pressed_variant", self, "handleMenuVariant")
 	
 
 
@@ -24,7 +24,7 @@ func _process(delta):
 	
 	for body in bodies:
 		if body.is_in_group("bricks"):
-			get_node("/root/World").score += 1
+			get_node("/root/variant").score += 1
 			body.queue_free()
 			
 			$Bounce.play()
@@ -49,6 +49,6 @@ func _process(delta):
 		queue_free()
 	if lives <0:
 		print("GAME OVER")
-func handleMenuClone():
+func handleMenuVariant():
 	queue_free()
 

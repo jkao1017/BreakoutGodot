@@ -10,6 +10,9 @@ var MOVE_SPEED = 300
 var life_time = 2
 var life_spawn = 0
 
+func _ready():
+	var menu_pressed_clone = get_tree().get_root().find_node("AlienWorld",true,false)
+	menu_pressed_clone.connect("menu_pressed_alien", self, "handleMenuAlien")
 func _process(delta):
 	var collision = move_and_collide(Vector2.UP * delta * MOVE_SPEED)
 	
@@ -26,4 +29,7 @@ func _process(delta):
 	life_spawn += delta
 	if life_spawn > life_time:
 		 queue_free()
+		
+func handleMenuAlien():
+	queue_free()
 

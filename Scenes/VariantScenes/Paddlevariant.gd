@@ -21,6 +21,7 @@ func _process(delta):
 		var ball = ball_scene.instance()
 		ball.position = position-Vector2(0,16)
 		get_tree().get_root().add_child(ball)
+		a=1
 		
 	if Input.is_action_pressed("ui_up"):
 		velocity.y = -speed
